@@ -1,0 +1,28 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace Blackjack_juego
+{
+    public partial class form_MDIparent : Form
+    {
+        private int childFormNumber = 0;
+
+        public form_MDIparent()
+        {
+            InitializeComponent();
+            Form1 inicio = new Form1();
+            inicio.MdiParent = this;
+            inicio.Show();
+        }
+
+
+
+    }
+}
