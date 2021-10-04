@@ -17,8 +17,10 @@ namespace Blackjack_juego
         public form_MDIparent()
         {
             InitializeComponent();
-            Form1 inicio = new Form1();
-            inicio.MdiParent = this;
+            Form1 inicio = new Form1
+            {
+                MdiParent = this
+            };
             inicio.Show();
         }
 

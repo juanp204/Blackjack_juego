@@ -21,5 +21,36 @@ namespace Blackjack_juego
         {
             pnlrecarga.Show();
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            pnlrecarga.Hide();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            lblTutorial.Text = "La idea es sacar cartas de la baraja\ny ir sumando sin pasarse de 21\n\n-";
+            this.MdiParent.Size = this.Size;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            juego jug = new juego
+            {
+                MdiParent = this.MdiParent
+            };
+            jug.Show();
+            this.Close();
+        }
     }
 }

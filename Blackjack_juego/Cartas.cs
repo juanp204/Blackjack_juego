@@ -8,16 +8,8 @@ namespace Blackjack_juego
 {
     class Cartas
     {
-        private string number;
-        private int symbol;
+        public string number;
+        public int symbol;
 
-        public string numero()
-        {
-            return number;
-        }
-        public int simbolo()
-        {
-            return symbol;
-        }
     }
 }
