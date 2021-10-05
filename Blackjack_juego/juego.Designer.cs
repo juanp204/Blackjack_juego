@@ -29,7 +29,6 @@ namespace Blackjack_juego
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.BtnMas = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.btnParar = new System.Windows.Forms.Button();
@@ -94,7 +93,6 @@ namespace Blackjack_juego
             this.label110 = new System.Windows.Forms.Label();
             this.btnotraG = new System.Windows.Forms.Button();
             this.btnregresarG = new System.Windows.Forms.Button();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
@@ -811,10 +809,6 @@ namespace Blackjack_juego
             this.btnregresarG.UseVisualStyleBackColor = true;
             this.btnregresarG.Click += new System.EventHandler(this.btnregresarG_Click);
             // 
-            // timer1
-            // 
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
             // pictureBox5
             // 
             this.pictureBox5.Image = global::Blackjack_juego.Properties.Resources.screenshot_2013_02_20_01_28_22_recorte__1_;
@@ -1387,7 +1381,6 @@ namespace Blackjack_juego
         private System.Windows.Forms.Label label110;
         private System.Windows.Forms.Button btnotraG;
         private System.Windows.Forms.Button btnregresarG;
-        private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox3;

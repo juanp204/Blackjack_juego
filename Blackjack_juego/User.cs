@@ -11,6 +11,7 @@ namespace Blackjack_juego
         private int puntuacion = 0;
         private int wins=0;
         private int lose=0;
+        public int contadorA = 0;
 
         public List<Cartas> masouser = new List<Cartas>();
 
@@ -23,6 +24,7 @@ namespace Blackjack_juego
             if (carta.Number == "A")
             {
                 puntuacion=puntuacion+1;
+                contadorA = contadorA + 1;
             }
             else if (carta.Number == "J"|| carta.Number == "Q" || carta.Number == "K")
             {

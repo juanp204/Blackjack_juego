@@ -216,6 +216,11 @@ namespace Blackjack_juego
             btnParar.Enabled = false;
             do
             {
+                if (dealer.contadorA>=1 && dealer.Getpuntuacion+10==21)
+                {
+                    dealer.Getpuntuacion = 21;
+                    break;
+                }
                 cogercarta(dealer);
                 if (dealer.masouser.Count == 3)
                 {
@@ -295,6 +300,10 @@ namespace Blackjack_juego
             }
             while (dealer.Getpuntuacion < 17);
             Console.WriteLine("salio");
+            if (jugador.contadorA>=1 && jugador.Getpuntuacion+10<=21)
+            {
+                jugador.Getpuntuacion = jugador.Getpuntuacion + 10;
+            }
             if ((dealer.Getpuntuacion < jugador.Getpuntuacion) || (dealer.Getpuntuacion>21))
             {
                 jugador.Wins=jugador.Wins+1;
