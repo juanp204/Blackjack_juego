@@ -28,9 +28,15 @@ namespace Blackjack_juego
         User jugador = new User();
         User dealer = new User();
         List<Cartas> maso = new List<Cartas>();
-
+        public bool esperar = true;
         private void juego_Load(object sender, EventArgs e)
         {
+            pictureBox1.Show();
+            pictureBox2.Hide();
+            pictureBox3.Hide();
+            pictureBox4.Hide();
+            pictureBox5.Hide();
+            pictureBox6.Hide();
             pnlperdiste.Hide();
             pnlganaste.Hide();
             btnParar.Enabled = true;
@@ -40,8 +46,16 @@ namespace Blackjack_juego
             panel5.Hide();
             panel6.Hide();
             panel7.Hide();
+            panel8.Hide();
+            panel10.Hide();
+            panel11.Hide();
+            panel12.Hide();
+            panel13.Hide();
+            panel14.Hide();
             jugador.Getpuntuacion = 0;
             dealer.Getpuntuacion = 0;
+            lblwins.Text = Convert.ToString(jugador.Wins);
+            lbllose.Text = Convert.ToString(jugador.Lose);
             try
             {
                 jugador.masouser.RemoveRange(0, jugador.masouser.Count);
@@ -52,18 +66,6 @@ namespace Blackjack_juego
             {
                 return;
             }
-            //foreach(Cartas i in jugador.masouser)
-            //{
-            //    jugador.masouser.Remove(i);
-            //}
-            //foreach (Cartas i in dealer.masouser)
-            //{
-            //    dealer.masouser.Remove(i);
-            //}
-            //foreach (Cartas i in maso)
-            //{
-            //    maso.Remove(i);
-            //}
             for (int s = 1; s <= 4; s++)
             {
                 for (int n = 1; n <= 13; n++)
@@ -199,35 +201,9 @@ namespace Blackjack_juego
                 label81.Text = symb;
                 panel7.Show();
             }
-            //else if (jugador.cantidad() == 6)
-            //{
-            //    string numb = jugador.masouser[5].Number;
-            //    string symb = jugador.masouser[5].Symbol;
-            //    label77.Text = numb;
-            //    label78.Text = numb;
-            //    label76.Text = symb;
-            //    label69.Text = symb;
-            //    label68.Text = symb;
-            //    panel6.Show();
-            //}
-            //else if (jugador.cantidad() == 7)
-            //{
-            //    string numb = jugador.masouser[6].Number;
-            //    string symb = jugador.masouser[6].Symbol;
-            //    label90.Text = numb;
-            //    label91.Text = numb;
-            //    label89.Text = symb;
-            //    label82.Text = symb;
-            //    label81.Text = symb;
-            //    panel7.Show();
-            //}
-            //else
-            //{
-
-            //}
             if (jugador.Getpuntuacion > 21)
             {
-                jugador.Lose = jugador.Lose++;
+                jugador.Lose = jugador.Lose+1;
                 pnlperdiste.Show();
                 btnParar.Enabled = false;
                 BtnMas.Enabled = false;
@@ -236,19 +212,115 @@ namespace Blackjack_juego
 
         private void btnParar_Click(object sender, EventArgs e)
         {
-
-
-            while (dealer.Getpuntuacion < 17)
+            BtnMas.Enabled = false;
+            btnParar.Enabled = false;
+            if (dealer.masouser.Count == 2)
             {
-                cogercarta(dealer);
-                timer1.Start();
+                pictureBox1.Hide();
+                pictureBox2.Show();
+                string numb = dealer.masouser[1].Number;
+                string symb = dealer.masouser[1].Symbol;
+                label7.Text = numb;
+                label8.Text = numb;
+                label6.Text = symb;
+                label3.Text = symb;
+                label5.Text = symb;
+                panel8.Show();
+            }
+            do
+            {
+                if (esperar)
+                {
+                    cogercarta(dealer);
+                    if (dealer.masouser.Count == 3)
+                    {
+                        pictureBox2.Hide();
+                        pictureBox3.Show();
+                        string numb = dealer.masouser[2].Number;
+                        string symb = dealer.masouser[2].Symbol;
+                        label14.Text = numb;
+                        label15.Text = numb;
+                        label13.Text = symb;
+                        label12.Text = symb;
+                        label9.Text = symb;
+                        panel10.Show();
+                    }
+                    if (dealer.masouser.Count == 4)
+                    {
+                        pictureBox3.Hide();
+                        pictureBox4.Show();
+                        string numb = dealer.masouser[3].Number;
+                        string symb = dealer.masouser[3].Symbol;
+                        label21.Text = numb;
+                        label22.Text = numb;
+                        label20.Text = symb;
+                        label19.Text = symb;
+                        label18.Text = symb;
+                        panel11.Show();
+                    }
+                    if (dealer.masouser.Count == 5)
+                    {
+                        pictureBox4.Hide();
+                        pictureBox5.Show();
+                        string numb = dealer.masouser[4].Number;
+                        string symb = dealer.masouser[4].Symbol;
+                        label31.Text = numb;
+                        label32.Text = numb;
+                        label28.Text = symb;
+                        label27.Text = symb;
+                        label23.Text = symb;
+                        panel12.Show();
+                    }
+                    if (dealer.masouser.Count == 6)
+                    {
+                        pictureBox5.Hide();
+                        pictureBox6.Show();
+                        string numb = dealer.masouser[5].Number;
+                        string symb = dealer.masouser[5].Symbol;
+                        label36.Text = numb;
+                        label40.Text = numb;
+                        label35.Text = symb;
+                        label34.Text = symb;
+                        label33.Text = symb;
+                        panel13.Show();
+                    }
+                    if (dealer.masouser.Count == 7)
+                    {
+                        pictureBox6.Hide();
+                        string numb = dealer.masouser[6].Number;
+                        string symb = dealer.masouser[6].Symbol;
+                        label46.Text = numb;
+                        label47.Text = numb;
+                        label45.Text = symb;
+                        label44.Text = symb;
+                        label41.Text = symb;
+                        panel14.Show();
+                    }
+                }
+            }
+            while (dealer.Getpuntuacion < 17);
+
+            if (dealer.Getpuntuacion < jugador.Getpuntuacion | dealer.Getpuntuacion>21)
+            {
+                jugador.Wins=jugador.Wins+1;
+                pnlganaste.Show();
+                btnParar.Enabled = false;
+                BtnMas.Enabled = false;
+
+            }
+            else
+            {
+                jugador.Lose = jugador.Lose + 1;
+                pnlperdiste.Show();
+                btnParar.Enabled = false;
+                BtnMas.Enabled = false;
             }
             
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-
+            esperar = true;
         }
 
         private void btnregresarP_Click(object sender, EventArgs e)

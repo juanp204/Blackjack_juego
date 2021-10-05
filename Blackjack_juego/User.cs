@@ -22,7 +22,7 @@ namespace Blackjack_juego
             masouser.Add(carta);
             if (carta.Number == "A")
             {
-                puntuacion++;
+                puntuacion=puntuacion+1;
             }
             else if (carta.Number == "J"|| carta.Number == "Q" || carta.Number == "K")
             {
