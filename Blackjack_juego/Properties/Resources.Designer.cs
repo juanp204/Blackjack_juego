@@ -59,5 +59,15 @@ namespace Blackjack_juego.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap screenshot_2013_02_20_01_28_22_recorte__1_ {
+            get {
+                object obj = ResourceManager.GetObject("screenshot_2013_02_20_01_28_22_recorte__1_", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

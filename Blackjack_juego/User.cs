@@ -9,14 +9,14 @@ namespace Blackjack_juego
     class User
     {
         private int puntuacion = 0;
-        private int wins;
-        private int lose;
-        
-        public int Wins { get => wins; set => wins = value;}
-        public int Lose { get => lose; set => lose = value; }
-        public int Getpuntuacion { get => puntuacion; }
+        private int wins=0;
+        private int lose=0;
 
         public List<Cartas> masouser = new List<Cartas>();
+
+        public int Wins { get => wins; set => wins = value;}
+        public int Lose { get => lose; set => lose = value; }
+        public int Getpuntuacion { get => puntuacion; set => puntuacion = value;}
         public void agregar(Cartas carta)
         {
             masouser.Add(carta);
@@ -36,8 +36,8 @@ namespace Blackjack_juego
         }
         public void init(Cartas carta1, Cartas carta2)
         {
-            masouser.Add(carta1);
-            masouser.Add(carta2);
+            agregar(carta1);
+            agregar(carta2);
         }
 
         public int cantidad()
