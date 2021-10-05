@@ -42,7 +42,7 @@ namespace Blackjack_juego
             this.IsMdiContainer = true;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "form_MDIparent";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.WindowsDefaultBounds;
             this.Text = "form_MDIparent";
             this.ResumeLayout(false);
 

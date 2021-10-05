@@ -8,8 +8,12 @@ namespace Blackjack_juego
 {
     class Cartas
     {
-        public string number;
-        public int symbol;
+        private string number;
+        private string symbol;
+        private bool colorred = false;
 
+        public string Number { get => number; set => number = value;}
+        public string Symbol { get => symbol; set => symbol = value;}
+        public bool Colorred { get => colorred; set => colorred = value;}
     }
 }

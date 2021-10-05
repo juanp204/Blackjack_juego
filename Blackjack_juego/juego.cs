@@ -18,10 +18,16 @@ namespace Blackjack_juego
         }
 
         Random rand = new Random();
+        User jugador = new User();
+        User deler = new User();
         List<Cartas> maso = new List<Cartas>();
 
         private void juego_Load(object sender, EventArgs e)
         {
+            foreach (Cartas i in maso)
+            {
+                maso.Remove(i);
+            }
             for (int s = 1; s<=4; s++)
             {
                 for (int n = 1; n <= 13; n++)
@@ -29,25 +35,42 @@ namespace Blackjack_juego
                     Cartas carta = new Cartas();
                     if (n == 1)
                     {
-                        carta.number = "A";
+                        carta.Number = "A";
                     }
                     else if (n==11)
                     {
-                        carta.number = "J";
+                        carta.Number = "J";
                     }
                     else if (n == 12)
                     {
-                        carta.number = "Q";
+                        carta.Number = "Q";
                     }
                     else if (n == 13)
                     {
-                        carta.number = "K";
+                        carta.Number = "K";
                     }
                     else
                     {
-                        carta.number = n.ToString();
+                        carta.Number = n.ToString();
                     }
-                    carta.symbol = s;
+                    if (s == 1)
+                    {
+                        carta.Symbol = "♥";
+                        carta.Colorred = true;
+                    }
+                    else if (s == 2)
+                    {
+                        carta.Symbol = "♦";
+                        carta.Colorred = true;
+                    }
+                    else if (s == 3)
+                    {
+                        carta.Symbol = "♣";
+                    }
+                    else if (s == 4)
+                    {
+                        carta.Symbol = "♠";
+                    }
                     maso.Add(carta);
                 }
             }
@@ -55,7 +78,52 @@ namespace Blackjack_juego
 
         private void button1_Click(object sender, EventArgs e)
         {
-            label1.Text = maso[rand.Next(maso.Count)].number;
+            int num = rand.Next(maso.Count);
+            jugador.agregar(maso[num]);
+            maso.Remove(maso[num]);
+            if (jugador.cantidad() == 1)
+            {
+                label1.Text = jugador.masouser[0].Number;
+                label2.Text = jugador.masouser[0].Number;
+                panel1.Show();
+            }
+            if (jugador.cantidad() == 2)
+            {
+                label25.Text = jugador.masouser[1].Number;
+                label26.Text = jugador.masouser[1].Number;
+                panel2.Show();
+            }
+            if (jugador.cantidad() == 3)
+            {
+                label38.Text = jugador.masouser[2].Number;
+                label39.Text = jugador.masouser[2].Number;
+                panel3.Show();
+            }
+            if (jugador.cantidad() == 4)
+            {
+                label51.Text = jugador.masouser[3].Number;
+                label52.Text = jugador.masouser[3].Number;
+                panel4.Show();
+            }
+            if (jugador.cantidad() == 5)
+            {
+                label1.Text = jugador.masouser[4].Number;
+                label2.Text = jugador.masouser[4].Number;
+                panel5.Show();
+            }
+            if (jugador.cantidad() == 6)
+            {
+                label1.Text = jugador.masouser[5].Number;
+                label2.Text = jugador.masouser[5].Number;
+                panel6.Show();
+            }
+            if (jugador.cantidad() == 7)
+            {
+                label1.Text = jugador.masouser[6].Number;
+                label2.Text = jugador.masouser[6].Number;
+                panel7.Show();
+            }
+
         }
     }
 }

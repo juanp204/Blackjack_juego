@@ -22,16 +22,6 @@ namespace Blackjack_juego
             pnlrecarga.Show();
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void button4_Click(object sender, EventArgs e)
         {
             pnlrecarga.Hide();
@@ -49,6 +39,7 @@ namespace Blackjack_juego
             {
                 MdiParent = this.MdiParent
             };
+            this.MdiParent.Size = jug.Size;
             jug.Show();
             this.Close();
         }

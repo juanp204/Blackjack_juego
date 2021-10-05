@@ -12,8 +12,6 @@ namespace Blackjack_juego
 {
     public partial class form_MDIparent : Form
     {
-        private int childFormNumber = 0;
-
         public form_MDIparent()
         {
             InitializeComponent();
@@ -23,8 +21,5 @@ namespace Blackjack_juego
             };
             inicio.Show();
         }
-
-
-
     }
 }

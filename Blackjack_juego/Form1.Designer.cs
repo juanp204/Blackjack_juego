@@ -56,13 +56,12 @@ namespace Blackjack_juego
             this.label1.Size = new System.Drawing.Size(372, 46);
             this.label1.TabIndex = 0;
             this.label1.Text = "0000000000000000";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.DimGray;
             this.button1.Font = new System.Drawing.Font("Rockwell", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(701, 485);
+            this.button1.Location = new System.Drawing.Point(736, 518);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(165, 75);
@@ -73,7 +72,7 @@ namespace Blackjack_juego
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(480, 58);
+            this.button2.Location = new System.Drawing.Point(478, 48);
             this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(115, 48);
@@ -85,11 +84,11 @@ namespace Blackjack_juego
             // pnlrecarga
             // 
             this.pnlrecarga.BackColor = System.Drawing.Color.SeaGreen;
-            this.pnlrecarga.Controls.Add(this.textBox1);
-            this.pnlrecarga.Controls.Add(this.label2);
             this.pnlrecarga.Controls.Add(this.button4);
             this.pnlrecarga.Controls.Add(this.button3);
-            this.pnlrecarga.Location = new System.Drawing.Point(560, 143);
+            this.pnlrecarga.Controls.Add(this.textBox1);
+            this.pnlrecarga.Controls.Add(this.label2);
+            this.pnlrecarga.Location = new System.Drawing.Point(636, 154);
             this.pnlrecarga.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlrecarga.Name = "pnlrecarga";
             this.pnlrecarga.Size = new System.Drawing.Size(382, 271);
@@ -145,7 +144,6 @@ namespace Blackjack_juego
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // label3
             // 
@@ -175,12 +173,12 @@ namespace Blackjack_juego
             this.BackColor = System.Drawing.Color.ForestGreen;
             this.ClientSize = new System.Drawing.Size(1131, 749);
             this.Controls.Add(this.pnlrecarga);
-            this.Controls.Add(this.lblTutorial);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.lblTutorial);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Form1";
