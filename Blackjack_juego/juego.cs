@@ -214,39 +214,34 @@ namespace Blackjack_juego
         {
             BtnMas.Enabled = false;
             btnParar.Enabled = false;
-            if (dealer.masouser.Count == 2)
-            {
-                pictureBox1.Hide();
-                pictureBox2.Show();
-                string numb = dealer.masouser[1].Number;
-                string symb = dealer.masouser[1].Symbol;
-                label7.Text = numb;
-                label8.Text = numb;
-                label6.Text = symb;
-                label3.Text = symb;
-                label5.Text = symb;
-                panel8.Show();
-            }
             do
             {
-                if (esperar)
+                cogercarta(dealer);
+                if (dealer.masouser.Count == 3)
                 {
-                    cogercarta(dealer);
-                    if (dealer.masouser.Count == 3)
-                    {
-                        pictureBox2.Hide();
-                        pictureBox3.Show();
-                        string numb = dealer.masouser[2].Number;
-                        string symb = dealer.masouser[2].Symbol;
-                        label14.Text = numb;
-                        label15.Text = numb;
-                        label13.Text = symb;
-                        label12.Text = symb;
-                        label9.Text = symb;
-                        panel10.Show();
-                    }
-                    if (dealer.masouser.Count == 4)
-                    {
+                    pictureBox1.Hide();
+                    pictureBox2.Show();
+                    string numb = dealer.masouser[1].Number;
+                    string symb = dealer.masouser[1].Symbol;
+                    label7.Text = numb;
+                    label8.Text = numb;
+                    label6.Text = symb;
+                    label3.Text = symb;
+                    label5.Text = symb;
+                    panel8.Show();
+                    pictureBox2.Hide();
+                    pictureBox3.Show();
+                    numb = dealer.masouser[2].Number;
+                    symb = dealer.masouser[2].Symbol;
+                    label14.Text = numb;
+                    label15.Text = numb;
+                    label13.Text = symb;
+                    label12.Text = symb;
+                    label9.Text = symb;
+                    panel10.Show();
+                }
+                if (dealer.masouser.Count == 4)
+                {
                         pictureBox3.Hide();
                         pictureBox4.Show();
                         string numb = dealer.masouser[3].Number;
@@ -257,9 +252,9 @@ namespace Blackjack_juego
                         label19.Text = symb;
                         label18.Text = symb;
                         panel11.Show();
-                    }
-                    if (dealer.masouser.Count == 5)
-                    {
+                }
+                if (dealer.masouser.Count == 5)
+                {
                         pictureBox4.Hide();
                         pictureBox5.Show();
                         string numb = dealer.masouser[4].Number;
@@ -270,9 +265,9 @@ namespace Blackjack_juego
                         label27.Text = symb;
                         label23.Text = symb;
                         panel12.Show();
-                    }
-                    if (dealer.masouser.Count == 6)
-                    {
+                }
+                if (dealer.masouser.Count == 6)
+                {
                         pictureBox5.Hide();
                         pictureBox6.Show();
                         string numb = dealer.masouser[5].Number;
@@ -283,9 +278,9 @@ namespace Blackjack_juego
                         label34.Text = symb;
                         label33.Text = symb;
                         panel13.Show();
-                    }
-                    if (dealer.masouser.Count == 7)
-                    {
+                }
+                if (dealer.masouser.Count == 7)
+                {
                         pictureBox6.Hide();
                         string numb = dealer.masouser[6].Number;
                         string symb = dealer.masouser[6].Symbol;
@@ -295,12 +290,12 @@ namespace Blackjack_juego
                         label44.Text = symb;
                         label41.Text = symb;
                         panel14.Show();
-                    }
                 }
+                Console.WriteLine("paso");
             }
             while (dealer.Getpuntuacion < 17);
-
-            if (dealer.Getpuntuacion < jugador.Getpuntuacion | dealer.Getpuntuacion>21)
+            Console.WriteLine("salio");
+            if ((dealer.Getpuntuacion < jugador.Getpuntuacion) || (dealer.Getpuntuacion>21))
             {
                 jugador.Wins=jugador.Wins+1;
                 pnlganaste.Show();

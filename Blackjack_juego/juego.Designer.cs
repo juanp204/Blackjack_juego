@@ -618,8 +618,7 @@ namespace Blackjack_juego
             this.pnlperdiste.Controls.Add(this.label105);
             this.pnlperdiste.Controls.Add(this.btnotraP);
             this.pnlperdiste.Controls.Add(this.btnregresarP);
-            this.pnlperdiste.Controls.Add(this.pnlganaste);
-            this.pnlperdiste.Location = new System.Drawing.Point(477, 338);
+            this.pnlperdiste.Location = new System.Drawing.Point(454, 303);
             this.pnlperdiste.Name = "pnlperdiste";
             this.pnlperdiste.Size = new System.Drawing.Size(456, 265);
             this.pnlperdiste.TabIndex = 11;
@@ -776,7 +775,7 @@ namespace Blackjack_juego
             this.pnlganaste.Controls.Add(this.label110);
             this.pnlganaste.Controls.Add(this.btnotraG);
             this.pnlganaste.Controls.Add(this.btnregresarG);
-            this.pnlganaste.Location = new System.Drawing.Point(3, 0);
+            this.pnlganaste.Location = new System.Drawing.Point(454, 292);
             this.pnlganaste.Name = "pnlganaste";
             this.pnlganaste.Size = new System.Drawing.Size(456, 265);
             this.pnlganaste.TabIndex = 23;
@@ -1249,6 +1248,7 @@ namespace Blackjack_juego
             this.Controls.Add(this.panel14);
             this.Controls.Add(this.panel13);
             this.Controls.Add(this.panel12);
+            this.Controls.Add(this.pnlganaste);
             this.Controls.Add(this.panel11);
             this.Controls.Add(this.pnlperdiste);
             this.Controls.Add(this.panel10);
